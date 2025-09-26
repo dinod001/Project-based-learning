@@ -25,7 +25,7 @@ class IQROutlierDetection(OutlierDetectionStrategy):
         
         return outliers
 
-class outlierDetector:
+class OutlierDetector:
     def __init__(self,strategy):
         self._strategy = strategy
     

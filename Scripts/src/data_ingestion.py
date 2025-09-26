@@ -7,10 +7,10 @@ class dataIngestor(ABC):
     def ingest(self,file_path_or_link:str) -> pd.DataFrame:
         pass
 
-class dataIngestorCSV(dataIngestor):
+class DataIngestorCSV(dataIngestor):
     def ingest(self, file_path_or_link):
         return pd.read_csv(file_path_or_link)
 
-class dataIngestorExcel(dataIngestor):
+class DataIngestorExcel(dataIngestor):
     def ingest(self, file_path_or_link):
         return pd.read_excel(file_path_or_link)
