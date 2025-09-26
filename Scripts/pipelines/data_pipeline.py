@@ -62,9 +62,41 @@ def data_pipeline(
        Y_train = pd.read_csv(Y_train_path)
        Y_test = pd.read_csv(Y_test_path)
 
-    ingestor = DataIngestorCSV()
-    df = ingestor.ingest(data_path)
+    if not os.path.exists('temp_imputed.csv'):
+        ingestor = DataIngestorCSV()
+        df = ingestor.ingest(data_path)
 
-    print(X_train_path)
+        print("\nStep 02: Handle missing values")
+
+        drop_handler = DropMissingValuesStrategy(critical_columns=columns['critical_columns'])
+
+        age_handler = FillMissingValuesStrategy(
+                                                method='mean',
+                                                relavant_column='Age'
+                                            )
+        
+        gender_handler = FillMissingValuesStrategy(
+                                                    relavant_column='Gender',
+                                                    is_custom_computer = True,
+                                                    custom_imputer = GenderImputer()
+                                                )
+        df = drop_handler.handle(df)
+        df = age_handler.handle(df)
+        df = gender_handler.handle(df)
+
+        df.to_csv('temp_imputed.csv', index=False)
+
+    df = pd.read_csv('temp_imputed.csv')
+
+    print(f"Data set shape after imputation {df.shape}")
+    print(df.isnull().sum())
+
+    print("\nStep 03: handling outliers")
+
+    outlier_detector = OutlierDetector(strategy=IQROutlierDetection())
+
+    df = outlier_detector.handle_outliers(df,columns['outlier_columns'])
+
+    print(f"Data set shape after outlier removal {df.shape}")
 
 data_pipeline()

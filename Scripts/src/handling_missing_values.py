@@ -77,7 +77,7 @@ class FillMissingValuesStrategy(MissingValueHandlingStrategy):
             -> Custom (Gender)
     """
 
-    def __init(self,
+    def __init__(self,
                 method='mean',
                 fill_value = None,
                 relavant_column=None,
@@ -93,6 +93,6 @@ class FillMissingValuesStrategy(MissingValueHandlingStrategy):
     def handle(self,df):
         if self.is_custom_computer:
             return self.custom_imputer.impute(df)
-        df[self.relavant_column] = df[self.relavant_column].fillna(df[self.relevant_column].mean())
-        logging.info(f'Missing values filled in column {self.relevant_column}.')
+        df[self.relavant_column] = df[self.relavant_column].fillna(df[self.relavant_column].mean())
+        logging.info(f'Missing values filled in column {self.relavant_column}.')
         return df
