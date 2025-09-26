@@ -34,7 +34,7 @@ class NominalEncodingStrategy(FeatureEncodingStrategy):
 
             encoder_path = os.path.join('artifacts/encode',f"{column}_encoder.json")
             with open(encoder_path,"w") as f:
-                json.dump(encoder_dict)
+                json.dump(encoder_dict,f)
             
             df[column]= df[column].map(encoder_dict)
         

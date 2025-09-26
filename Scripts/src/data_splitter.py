@@ -25,7 +25,7 @@ class SimpleTrainTestSplitStratergy(DataSplittingStrategy):
         self.test_size= test_size
 
     def split_data(self, df, target_column):
-        Y = df[target_column].values
+        Y = df[target_column]
         X = df.drop(columns=[target_column])
         
         X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=self.test_size, random_state=42)

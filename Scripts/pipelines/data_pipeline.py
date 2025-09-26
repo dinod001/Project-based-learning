@@ -61,6 +61,8 @@ def data_pipeline(
        X_test = pd.read_csv(X_test_path)
        Y_train = pd.read_csv(Y_train_path)
        Y_test = pd.read_csv(Y_test_path)
+    
+    os.makedirs(data_paths['data_artifacts_dir'],exist_ok=True)
 
     if not os.path.exists('temp_imputed.csv'):
         ingestor = DataIngestorCSV()
@@ -98,5 +100,50 @@ def data_pipeline(
     df = outlier_detector.handle_outliers(df,columns['outlier_columns'])
 
     print(f"Data set shape after outlier removal {df.shape}")
+
+    print("\nStep 04: Fetaure Binning")
+
+    binning = CustomBinningStrategy(binning_config['credit_score_bins'])
+    df = binning.bin_feature(df,'CreditScore')
+
+    print(f"Data set shape after feature binning {df.shape}")
+
+    print("\nStep 05: Fetaure Encoding")
+
+    nominal_startegy = NominalEncodingStrategy(encoding_config['nominal_columns'])
+    ordinal_startegy = OrdinalEncodingStrategy(encoding_config['ordinal_mappings'])
+
+    df = nominal_startegy.encode(df)
+    df = ordinal_startegy.encode(df)
+
+    print(f"Data set shape after encoding {df.shape}")
+
+    print(df.head())
+
+    print("\nStep 06: Fetaure Scalling")
+
+    minmax_strategy = MinMaxScalingStrategy()
+    df =  minmax_strategy.scale(df,scaling_config['columns_to_scale'])
+
+    print(f"Data set shape after scalling {df.shape}")
+    print(df.head())
+
+    df = df.drop(columns=['RowNumber','CustomerId','Firstname','Lastname'])
+    print(df)
+
+    print("\nStep 06: Fetaure Scalling")
+
+    spliting_strategy = SimpleTrainTestSplitStratergy(test_size=splitting_config['test_size'])
+    X_train,X_test,Y_train,Y_test = spliting_strategy.split_data(df,'Exited')
+
+    X_train.to_csv(X_train_path,index=False)
+    X_test.to_csv(X_test_path,index=False)
+    Y_train.to_csv(Y_train_path,index=False)
+    Y_test.to_csv(Y_test_path,index=False)
+
+    print(f"X train shape {X_train.shape}")
+    print(f"X test shape {X_test.shape}")
+    print(f"Y train shape {Y_train.shape}")
+    print(f"Y test shape {Y_test.shape}")
 
 data_pipeline()
