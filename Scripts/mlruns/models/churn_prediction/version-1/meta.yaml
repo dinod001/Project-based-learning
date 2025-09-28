@@ -1,0 +1,18 @@
+aliases: []
+creation_timestamp: 1759049899292
+current_stage: None
+deployment_job_state: null
+description: null
+last_updated_timestamp: 1759049899292
+metrics: null
+model_id: m-61922f6f1fb84d918fa69027dd9d299b
+name: churn_prediction
+params: null
+run_id: fffd7fddcd9f4e9baf890d21f2505c34
+run_link: null
+source: models:/m-61922f6f1fb84d918fa69027dd9d299b
+status: READY
+status_message: null
+storage_location: file:E:/my career life/Machine learning/Project based learning/Scripts/mlruns/234751799422637810/models/m-61922f6f1fb84d918fa69027dd9d299b/artifacts
+user_id: null
+version: 1

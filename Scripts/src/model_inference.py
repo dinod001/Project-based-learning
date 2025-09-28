@@ -73,27 +73,3 @@ class ModelInference:
         status = 'Churn' if prediction == 1 else 'Retain'
         confidence = round(probability * 100, 2)
         return {"Status": status, "Confidence": f"{confidence}%"}
-
-data = {
-    "RowNumber": 1,
-    "CustomerId": 15634602,
-    "Firstname": "Grace",
-    "Lastname": "Williams",
-    "CreditScore": 619,
-    "Geography": "France",
-    "Gender": "Female",
-    "Age": 42,
-    "Tenure": 2,
-    "Balance": 0,
-    "NumOfProducts": 1,
-    "HasCrCard": 1,
-    "IsActiveMember": 1,
-    "EstimatedSalary": 101348.88,
-}
-
-
-inference = ModelInference(model_path = 'artifacts/models/churn_analysis.joblib')
-inference.load_encoders('artifacts/encode')
-
-data = inference.predict(data)
-print(data)
