@@ -145,5 +145,3 @@ def data_pipeline(
     print(f"X test shape {X_test.shape}")
     print(f"Y train shape {Y_train.shape}")
     print(f"Y test shape {Y_test.shape}")
-
-data_pipeline()

@@ -61,5 +61,5 @@ class XGboostModelBuilder(BaseModelBuilder):
         super().__init__('XGboost',**default_params)
 
     def build_model(self):
-        self.model = RandomForestClassifier(**self.model_params)
+        self.model = XGBClassifier(**self.model_params)
         return self.model
