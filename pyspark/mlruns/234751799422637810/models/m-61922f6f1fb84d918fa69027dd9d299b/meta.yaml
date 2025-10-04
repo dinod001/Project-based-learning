@@ -1,0 +1,10 @@
+artifact_location: file:E:/my career life/Machine learning/Project based learning/Scripts/mlruns/234751799422637810/models/m-61922f6f1fb84d918fa69027dd9d299b/artifacts
+creation_timestamp: 1759049844885
+experiment_id: '234751799422637810'
+last_updated_timestamp: 1759049899213
+model_id: m-61922f6f1fb84d918fa69027dd9d299b
+model_type: null
+name: model
+source_run_id: fffd7fddcd9f4e9baf890d21f2505c34
+status: 2
+status_message: null
