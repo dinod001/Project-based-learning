@@ -4,8 +4,10 @@ import sys
 import joblib
 from typing import Any, Dict
 import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+import joblib
 from feature_binning import CustomBinningStrategy
-from feature_encoding import OrdinalEncodingStrategy
+from feature_encoding import OrdinalEncodingStrategy,NominalEncodingStrategy
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'utils'))
 from config import get_binning_config, get_encoding_config
 
@@ -42,22 +44,39 @@ class ModelInference:
         df = pd.DataFrame([data])
 
         # Apply encoders
-        for col, encoder in self.encoders.items():
-            if col in df.columns:
-                df[col] = df[col].map(encoder)
-
+        nominal_cols = ['Gender', 'Geography']
+        nominal_strategy = NominalEncodingStrategy(nominal_cols)
+        df = nominal_strategy.encode(df) 
         # Feature binning
         if 'CreditScore' in df.columns:
             binning = CustomBinningStrategy(self.binning_config['credit_score_bins'])
             df = binning.bin_feature(df, 'CreditScore')
 
+        #scallin columns
+        scaling_columns= ["Balance","Age","EstimatedSalary"]
+        scaler_path = "artifacts/encode/minmax_scaler.joblib"
+        scaler: MinMaxScaler = joblib.load(scaler_path)
+        df[scaling_columns] = scaler.transform(df[scaling_columns])
+
         # Ordinal encoding
         ordinal_strategy = OrdinalEncodingStrategy(self.encoding_config['ordinal_mappings'])
         df = ordinal_strategy.encode(df)
 
+        expected_columns = [
+            'Age', 'Tenure', 'Balance', 'NumOfProducts', 'HasCrCard',
+            'IsActiveMember', 'EstimatedSalary', 'CreditScoreBins',
+            'Geography_France', 'Geography_Germany', 'Geography_Spain',
+            'Gender_Female', 'Gender_Male'
+        ]
+        for col in expected_columns:
+            if col not in df.columns:
+                df[col] = 0
+        df = df[expected_columns]
+
         # Drop unnecessary columns
         drop_columns = ['RowNumber', 'CustomerId', 'Firstname', 'Lastname']
         df = df.drop(columns=[col for col in drop_columns if col in df.columns])
+        
         print(df)
         return df
 

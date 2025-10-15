@@ -34,13 +34,13 @@ if __name__=='__main__':
     "CreditScore": 619,
     "Geography": "France",
     "Gender": "Female",
-    "Age": 0.24324324324324326,
+    "Age": 42,
     "Tenure": 2,
     "Balance": 0,
     "NumOfProducts": 1,
     "HasCrCard": 1,
     "IsActiveMember": 1,
-    "EstimatedSalary": 0.17950154239729893,
+    "EstimatedSalary": 101348.88,
     }
     inference = ModelInference(model_path = 'artifacts/models/churn_analysis.joblib')
     result = streaming_inference(inference=inference,data=data)
