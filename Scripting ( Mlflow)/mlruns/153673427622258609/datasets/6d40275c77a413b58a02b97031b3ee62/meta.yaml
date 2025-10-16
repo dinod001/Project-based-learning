@@ -1,0 +1,16 @@
+digest: b782cd28
+name: dataset
+profile: '{"num_rows": 7990, "num_elements": 103870}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "Age", "required": true},
+  {"type": "long", "name": "Tenure", "required": true}, {"type": "double", "name":
+  "Balance", "required": true}, {"type": "double", "name": "NumOfProducts", "required":
+  true}, {"type": "long", "name": "HasCrCard", "required": true}, {"type": "long",
+  "name": "IsActiveMember", "required": true}, {"type": "double", "name": "EstimatedSalary",
+  "required": true}, {"type": "long", "name": "CreditScoreBins", "required": true},
+  {"type": "boolean", "name": "Geography_France", "required": true}, {"type": "boolean",
+  "name": "Geography_Germany", "required": true}, {"type": "boolean", "name": "Geography_Spain",
+  "required": true}, {"type": "boolean", "name": "Gender_Female", "required": true},
+  {"type": "boolean", "name": "Gender_Male", "required": true}]}'
+source: '{"tags": {"mlflow.user": "DSYS", "mlflow.source.name": "pipelines/training_pipeline.py",
+  "mlflow.source.type": "LOCAL", "mlflow.source.git.commit": "632b6090629832507ee00e8703173e42ff5e7a49"}}'
+source_type: code

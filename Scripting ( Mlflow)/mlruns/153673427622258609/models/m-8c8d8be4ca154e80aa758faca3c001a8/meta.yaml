@@ -1,0 +1,11 @@
+artifact_location: file:E:/my career life/Machine learning/Project based learning/Scripting
+  ( Mlflow)/mlruns/153673427622258609/models/m-8c8d8be4ca154e80aa758faca3c001a8/artifacts
+creation_timestamp: 1760579670665
+experiment_id: '153673427622258609'
+last_updated_timestamp: 1760579695954
+model_id: m-8c8d8be4ca154e80aa758faca3c001a8
+model_type: null
+name: model
+source_run_id: f6e48a2e0a864a6183ba2aca59e7943f
+status: 2
+status_message: null
