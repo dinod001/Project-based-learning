@@ -1,0 +1,11 @@
+artifact_location: file:E:/my career life/Machine learning/Project based learning/Scripting
+  ( Mlflow)/mlruns/153673427622258609/models/m-f305f91228ad4eefb5a4b3f715671a83/artifacts
+creation_timestamp: 1760636518713
+experiment_id: '153673427622258609'
+last_updated_timestamp: 1760636528111
+model_id: m-f305f91228ad4eefb5a4b3f715671a83
+model_type: null
+name: best_estimator
+source_run_id: 2af176932e0b47b7b2ce31403f777fbd
+status: 2
+status_message: null

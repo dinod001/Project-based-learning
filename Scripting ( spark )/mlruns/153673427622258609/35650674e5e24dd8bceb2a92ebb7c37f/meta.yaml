@@ -1,0 +1,15 @@
+artifact_uri: file:E:/my career life/Machine learning/Project based learning/Scripting
+  ( Mlflow)/mlruns/153673427622258609/35650674e5e24dd8bceb2a92ebb7c37f/artifacts
+end_time: 1760636339598
+entry_point_name: ''
+experiment_id: '153673427622258609'
+lifecycle_stage: active
+run_id: 35650674e5e24dd8bceb2a92ebb7c37f
+run_name: data pipeline | 2025-10-16 23:08:57
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760636337820
+status: 3
+tags: []
+user_id: DSYS
