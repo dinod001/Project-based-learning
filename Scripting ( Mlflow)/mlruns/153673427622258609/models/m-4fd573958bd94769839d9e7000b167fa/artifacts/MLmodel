@@ -1,0 +1,38 @@
+artifact_path: file:E:/my career life/Machine learning/Project based learning/Scripting
+  ( Mlflow)/mlruns/153673427622258609/models/m-4fd573958bd94769839d9e7000b167fa/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.3
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+is_signature_from_type_hint: false
+mlflow_version: 3.4.0
+model_id: m-4fd573958bd94769839d9e7000b167fa
+model_size_bytes: 231399
+model_uuid: m-4fd573958bd94769839d9e7000b167fa
+prompts: null
+run_id: d76d47ff08394c61a137d47b6ff24333
+signature:
+  inputs: '[{"type": "double", "name": "Age", "required": true}, {"type": "long",
+    "name": "Tenure", "required": true}, {"type": "double", "name": "Balance", "required":
+    true}, {"type": "long", "name": "NumOfProducts", "required": true}, {"type": "long",
+    "name": "HasCrCard", "required": true}, {"type": "long", "name": "IsActiveMember",
+    "required": true}, {"type": "double", "name": "EstimatedSalary", "required": true},
+    {"type": "long", "name": "CreditScoreBins", "required": true}, {"type": "long",
+    "name": "Geography_France", "required": true}, {"type": "long", "name": "Geography_Germany",
+    "required": true}, {"type": "long", "name": "Geography_Spain", "required": true},
+    {"type": "long", "name": "Gender_Male", "required": true}, {"type": "long", "name":
+    "Gender_Female", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-10-21 06:03:39.490692'
