@@ -1,0 +1,15 @@
+artifact_uri: file:E:/my career life/Machine learning/Project based learning/Scripting
+  ( Mlflow)/mlruns/153673427622258609/01359a38e3b448448c3c8afaeac65d4c/artifacts
+end_time: 1760580543688
+entry_point_name: ''
+experiment_id: '153673427622258609'
+lifecycle_stage: active
+run_id: 01359a38e3b448448c3c8afaeac65d4c
+run_name: crawling-shoat-145
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760580461438
+status: 3
+tags: []
+user_id: DSYS

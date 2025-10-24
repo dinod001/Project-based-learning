@@ -1,0 +1,16 @@
+digest: aa4e5bc9
+name: dataset
+profile: '{"num_rows": 7990, "num_elements": 103870}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "Age", "required": true},
+  {"type": "long", "name": "Tenure", "required": true}, {"type": "double", "name":
+  "Balance", "required": true}, {"type": "long", "name": "NumOfProducts", "required":
+  true}, {"type": "long", "name": "HasCrCard", "required": true}, {"type": "long",
+  "name": "IsActiveMember", "required": true}, {"type": "double", "name": "EstimatedSalary",
+  "required": true}, {"type": "long", "name": "CreditScoreBins", "required": true},
+  {"type": "long", "name": "Geography_France", "required": true}, {"type": "long",
+  "name": "Geography_Germany", "required": true}, {"type": "long", "name": "Geography_Spain",
+  "required": true}, {"type": "long", "name": "Gender_Male", "required": true}, {"type":
+  "long", "name": "Gender_Female", "required": true}]}'
+source: '{"tags": {"mlflow.user": "DSYS", "mlflow.source.name": "pipelines/training_pipeline.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code

@@ -1,0 +1,23 @@
+artifact_path: file:E:/my career life/Machine learning/Project based learning/Scripting
+  ( Mlflow)/mlruns/153673427622258609/models/m-958a5dd141a84abea1786f8c56306bfe/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.3
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+mlflow_version: 3.4.0
+model_id: m-958a5dd141a84abea1786f8c56306bfe
+model_size_bytes: 218905
+model_uuid: m-958a5dd141a84abea1786f8c56306bfe
+prompts: null
+run_id: bc51c33675d941aeb8016b80a7587450
+utc_time_created: '2025-10-16 02:09:05.385891'
